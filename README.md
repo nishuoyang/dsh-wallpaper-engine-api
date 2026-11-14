@@ -1,9 +1,9 @@
 # dsh-wallpaper-engine-api
 
 > v0.1.1 · MIT License · Windows
-> English · [简体中文](https://github.com/nishuoyang/dsh-wallpaper-bg/blob/main/dsh-wallpaper-engine-api/README.zh.md)
+> English · [简体中文](https://github.com/nishuoyang/dsh-wallpaper-engine-api/blob/main/README.zh.md)
 
-Turns the standalone `wallpaper-engine-api/` service (clone repo → `npm install` → double-click a `.bat` → register autostart) into a DSH plugin for [dsh-wallpaper-bg](https://github.com/nishuoyang/dsh-wallpaper-bg)'s **WE library** source.
+Turns the standalone [`wallpaper-engine-api`](https://github.com/nishuoyang/wallpaper-engine-api) service (clone repo → `npm install` → double-click a `.bat` → register autostart) into a DSH plugin for [dsh-wallpaper-bg](https://github.com/nishuoyang/dsh-wallpaper-bg)'s **WE library** source.
 
 One command:
 
@@ -459,7 +459,7 @@ npm pack --dry-run
 npm publish --access public
 ```
 
-The repository's `scripts/release.ps1` releases only `dsh-wallpaper-bg` and does **not** handle this package; it is versioned independently in its own `package.json`, with a matching `CHANGELOG.md` entry added before publishing. `package.json`'s `files` must include `index.js`, `lib/`, `cordis.patch.yml`, `locale/*.json`, `icon.svg`, both READMEs, `LICENSE`, and `CHANGELOG.md`. The main plugin discovers it through the same-origin status route, so the two can be upgraded independently; only a contract change (the `base` field on `/dsh-wallpaper-engine-api/status`) requires upgrading both.
+This package lives in its own repository and is versioned independently in its own `package.json`, with a matching `CHANGELOG.md` entry added before publishing. The parent plugin's `scripts/release.ps1` does **not** handle this package. `package.json`'s `files` must include `index.js`, `lib/`, `cordis.patch.yml`, `locale/*.json`, `icon.svg`, both READMEs, `LICENSE`, and `CHANGELOG.md`. The main plugin discovers it through the same-origin status route, so the two can be upgraded independently; only a contract change (the `base` field on `/dsh-wallpaper-engine-api/status`) requires upgrading both.
 
 ## License
 

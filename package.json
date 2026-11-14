@@ -43,12 +43,11 @@
   "author": "nishuoyang",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nishuoyang/dsh-wallpaper-bg.git",
-    "directory": "dsh-wallpaper-engine-api"
+    "url": "git+https://github.com/nishuoyang/dsh-wallpaper-engine-api.git"
   },
-  "homepage": "https://github.com/nishuoyang/dsh-wallpaper-bg/tree/main/dsh-wallpaper-engine-api#readme",
+  "homepage": "https://github.com/nishuoyang/dsh-wallpaper-engine-api#readme",
   "bugs": {
-    "url": "https://github.com/nishuoyang/dsh-wallpaper-bg/issues"
+    "url": "https://github.com/nishuoyang/dsh-wallpaper-engine-api/issues"
   },
   "engines": {
     "node": ">=20"

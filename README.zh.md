@@ -1,9 +1,9 @@
 # dsh-wallpaper-engine-api
 
 > v0.1.1 · MIT License · Windows
-> [English](https://github.com/nishuoyang/dsh-wallpaper-bg/blob/main/dsh-wallpaper-engine-api/README.md) · 简体中文
+> [English](https://github.com/nishuoyang/dsh-wallpaper-engine-api/blob/main/README.md) · 简体中文
 
-把 [dsh-wallpaper-bg](https://github.com/nishuoyang/dsh-wallpaper-bg) 仓库里原来那份需要 **clone 仓库 → `npm install` → 双击 `.bat` → 设置开机自启** 的 `wallpaper-engine-api/` 独立服务，做成一个 DSH 插件。
+把 [dsh-wallpaper-bg](https://github.com/nishuoyang/dsh-wallpaper-bg) 仓库里原来那份需要 **clone 仓库 → `npm install` → 双击 `.bat` → 设置开机自启** 的 [`wallpaper-engine-api`](https://github.com/nishuoyang/wallpaper-engine-api) 独立服务，做成一个 DSH 插件。
 
 装好后，插件在 DSH 宿主进程内开一个**只读** HTTP API，把本机 Wallpaper Engine 的已安装壁纸交给 `dsh-wallpaper-bg` 的「WE 壁纸库」来源。一条命令即可：
 
@@ -462,7 +462,7 @@ npm pack --dry-run
 npm publish --access public
 ```
 
-仓库的 `scripts/release.ps1` 只发布 `dsh-wallpaper-bg` 本体，**不处理本包**；本包独立发版，版本号在 `package.json` 里改，发版前先补 `CHANGELOG.md` 的对应条目。`package.json` 的 `files` 需包含 `index.js`、`lib/`、`cordis.patch.yml`、`locale/*.json`、`icon.svg`、两个 README、`LICENSE` 与 `CHANGELOG.md`。主插件通过同源状态路由发现本包，两者可以独立升级；只有契约（`/dsh-wallpaper-engine-api/status` 的 `base` 字段）变化时才需要同时升级主插件。
+本包现在位于独立仓库，独立发版：版本号在 `package.json` 里改，发版前先补 `CHANGELOG.md` 的对应条目；主插件仓库的 `scripts/release.ps1` **不处理本包**。`package.json` 的 `files` 需包含 `index.js`、`lib/`、`cordis.patch.yml`、`locale/*.json`、`icon.svg`、两个 README、`LICENSE` 与 `CHANGELOG.md`。主插件通过同源状态路由发现本包，两者可以独立升级；只有契约（`/dsh-wallpaper-engine-api/status` 的 `base` 字段）变化时才需要同时升级主插件。
 
 ## 许可证
 
